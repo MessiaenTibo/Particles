@@ -47,6 +47,15 @@ export const particleSystem = (() => {
         }
     }
 
+    // Move all particles to mouse position
+    const moveToMouse = (x: number, y: number) => {
+        for (const p of particles)
+        {
+            p.x = x
+            p.y = y
+        }
+    }
+
     const animate = () => {
         clear()
         update()
@@ -64,6 +73,7 @@ export const particleSystem = (() => {
         draw,
         update,
         animate,
+        moveToMouse,
         clear
     }
 })()

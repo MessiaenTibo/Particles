@@ -15,5 +15,18 @@ if(ctx)
   particleSystem.animate()
 }
 
+//mouse click event
+document.addEventListener('click', (e) => {
+  particleSystem.moveToMouse(e.clientX, e.clientY)
+})
+
+//mouse move event
+document.addEventListener('mousemove', (e) => {
+  //if mouse is pressed
+  if(e.buttons == 1)
+  {
+    particleSystem.moveToMouse(e.clientX, e.clientY)
+  }
+})
 
 // Module voor particleSystem (revealing module pattern - iife - self-invoking function)
